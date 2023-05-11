@@ -13,7 +13,7 @@ public class WalkerAgent : Agent
     [Range(0.1f, 10)]
     [SerializeField]
     //The walking speed to try and achieve
-    private float m_TargetWalkingSpeed = 10;
+    private float m_TargetWalkingSpeed = 3;
 
     public float MTargetWalkingSpeed // property
     {

@@ -28,7 +28,7 @@ namespace Unity.MLAgents
         [Range(1, 20)]
         [Tooltip("The frequency with which the agent requests a decision. A DecisionPeriod " +
             "of 5 means that the Agent will request a decision every 5 Academy steps.")]
-        public int DecisionPeriod = 5;
+        public int DecisionPeriod = 1;
 
         /// <summary>
         /// Indicates whether or not the agent will take an action during the Academy steps where
@@ -38,7 +38,7 @@ namespace Unity.MLAgents
             "steps where it does not request a decision. Has no effect when DecisionPeriod " +
             "is set to 1.")]
         [FormerlySerializedAs("RepeatAction")]
-        public bool TakeActionsBetweenDecisions = true;
+        public bool TakeActionsBetweenDecisions = false;
 
         [NonSerialized]
         Agent m_Agent;

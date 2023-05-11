@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44971168, g: 0.4997775, b: 0.57563686, a: 1}
+  m_IndirectSpecularColor: {r: 0.44971228, g: 0.49977815, b: 0.57563734, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformDynamicTarget (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
       propertyPath: m_RootOrder
@@ -261,6 +266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlatformDynamicTarget (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
@@ -393,6 +403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformDynamicTarget (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
       propertyPath: m_RootOrder
@@ -518,6 +533,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1040176992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132147965585697, guid: 84359146bf7af47e58c229d877e801d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2709362470382547191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1040176999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040176992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 0
+  NumStepsToRecord: 50000
+  DemonstrationName: demo6
+  DemonstrationDirectory: C:\Users\georg\Documents\GitHub\ml-agents\Project\Assets\ML-Agents\Examples\Walker\Demos
 --- !u!1001 &1079850865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -529,6 +566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlatformDynamicTarget (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
@@ -698,6 +740,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformDynamicTarget (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
       propertyPath: m_RootOrder
@@ -866,6 +913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformDynamicTarget (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
       propertyPath: m_RootOrder
@@ -934,6 +986,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlatformDynamicTarget (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
@@ -1004,6 +1061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformDynamicTarget (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
       propertyPath: m_RootOrder
@@ -1072,6 +1134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlatformDynamicTarget (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
@@ -1206,6 +1273,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 654595226, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
+      propertyPath: DecisionPeriod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 654595228, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
+      propertyPath: m_TargetWalkingSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 654595228, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
+      propertyPath: randomizeWalkSpeedEachEpisode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 654595229, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 7b6e02fd8b6805848b032f827d5fda1a,
+        type: 3}
+    - target: {fileID: 654595229, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
+      propertyPath: m_InferenceDevice
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 654595229, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474783435, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928249082, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6713178126238440196, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
       propertyPath: m_Name
@@ -1264,6 +1364,11 @@ PrefabInstance:
     - target: {fileID: 6718791046026642300, guid: 84359146bf7af47e58c229d877e801d7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060220857351289702, guid: 84359146bf7af47e58c229d877e801d7,
+        type: 3}
+      propertyPath: updatedByAgent
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
