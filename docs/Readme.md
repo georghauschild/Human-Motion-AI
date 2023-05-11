@@ -5,26 +5,26 @@ Human-Motion-AI aims to simulate human movement behavior, using artificial intel
 
 ## Index
 <!--- [Chronological Order](https://github.com/georghauschild/AIreadmeTest#chronological-order) -->
-- [Steps of Optimization](https://github.com/georghauschild/AIreadmeTest#steps-of-optimization)
-- [Training](https://github.com/georghauschild/AIreadmeTest#training)
-  - [Hardware Utilization](https://github.com/georghauschild/AIreadmeTest#hardware-utilization)
-  - [Customized Training Routines](https://github.com/georghauschild/AIreadmeTest#customized-training-routines)
-    - [Attempt 1 - Increased Agent Number](https://github.com/georghauschild/AIreadmeTest#attempt-1---increased-agent-number)
-    - [Attempt 2 - Concurrent Unity Instances](https://github.com/georghauschild/AIreadmeTest#attempt-2---concurrent-unity-instances)
-    - [Attempt 3 - More Simultaneous Instances and Hidden Units Changes](https://github.com/georghauschild/AIreadmeTest#attempt-3---more-simultaneous-instances-and-hidden-units-changes)
-- [Developer Branch Integration](https://github.com/georghauschild/AIreadmeTest#developer-branch-integration)
-- [Developer Branch AI model](https://github.com/georghauschild/AIreadmeTest#developer-branch-ai-model)
-- [Imitation Learning](https://github.com/georghauschild/AIreadmeTest#imitation-learning)
-    - [Gail and BC](https://github.com/georghauschild/AIreadmeTest#gail-and-bc)
-    - [BC](https://github.com/georghauschild/AIreadmeTest#bc)
-- [Installation and Version Instructions](https://github.com/georghauschild/AIreadmeTest#installation-and-version-instructions)
-  - [Installation Advice](https://github.com/georghauschild/AIreadmeTest#hardware-utilization)
-  - [Library Versions](https://github.com/georghauschild/AIreadmeTest/tree/main#library-versions)
-- [Scripts](https://github.com/georghauschild/AIreadmeTest/tree/main#scripts)
-  - [Walker Agent](https://github.com/georghauschild/AIreadmeTest#walker-agent)
-  - [Decision Requester](https://github.com/georghauschild/AIreadmeTest#decision-requester)
-  - [Demonstration File](https://github.com/georghauschild/AIreadmeTest#demonstration-file)
-  - [Generate AI Model](https://github.com/georghauschild/AIreadmeTest#generate-ai-model)
+- [Steps of Optimization](https://github.com/georghauschild/Human-Motion-AI#steps-of-optimization)
+- [Training](https://github.com/georghauschild/Human-Motion-AI#training)
+  - [Hardware Utilization](https://github.com/georghauschild/Human-Motion-AI#hardware-utilization)
+  - [Customized Training Routines](https://github.com/georghauschild/Human-Motion-AI#customized-training-routines)
+    - [Attempt 1 - Increased Agent Number](https://github.com/georghauschild/Human-Motion-AI#attempt-1---increased-agent-number)
+    - [Attempt 2 - Concurrent Unity Instances](https://github.com/georghauschild/Human-Motion-AI#attempt-2---concurrent-unity-instances)
+    - [Attempt 3 - More Simultaneous Instances and Hidden Units Changes](https://github.com/georghauschild/Human-Motion-AI#attempt-3---more-simultaneous-instances-and-hidden-units-changes)
+- [Developer Branch Integration](https://github.com/georghauschild/Human-Motion-AI#developer-branch-integration)
+- [Developer Branch AI model](https://github.com/georghauschild/Human-Motion-AI#developer-branch-ai-model)
+- [Imitation Learning](https://github.com/georghauschild/Human-Motion-AI#imitation-learning)
+    - [Gail and BC](https://github.com/georghauschild/Human-Motion-AI#gail-and-bc)
+    - [BC](https://github.com/georghauschild/Human-Motion-AI#bc)
+- [Installation and Version Instructions](https://github.com/georghauschild/Human-Motion-AI#installation-and-version-instructions)
+  - [Installation Advice](https://github.com/georghauschild/Human-Motion-AI#hardware-utilization)
+  - [Library Versions](https://github.com/georghauschild/Human-Motion-AI/tree/main#library-versions)
+- [Scripts](https://github.com/georghauschild/Human-Motion-AI/tree/main#scripts)
+  - [Walker Agent](https://github.com/georghauschild/Human-Motion-AI#walker-agent)
+  - [Decision Requester](https://github.com/georghauschild/Human-Motion-AI#decision-requester)
+  - [Demonstration File](https://github.com/georghauschild/Human-Motion-AI#demonstration-file)
+  - [Generate AI Model](https://github.com/georghauschild/Human-Motion-AI#generate-ai-model)
 
 <!---
 ## Chronological Order
@@ -154,7 +154,7 @@ Download this AI model [here](https://drive.google.com/file/d/1tOfK2Jsr-tLzane6b
 Note: This AI model will run on ML-Agents release version 20, but not on the developer branch version.
 
 ## Developer Branch Integration
-As the brand-new push in the [developer branch](https://github.com/Unity-Technologies/ml-agents/tree/develop) proved to be extremely functional, the project was shifted to it and left the [release-20](https://github.com/Unity-Technologies/ml-agents/tree/release_20) branch. Be aware of version changes mentioned in the [installation and version instructions](https://github.com/georghauschild/AIreadmeTest/blob/main/README.md#installation-and-version-instructions) and exchange required libraries. 
+As the brand-new push in the [developer branch](https://github.com/Unity-Technologies/ml-agents/tree/develop) proved to be extremely functional, the project was shifted to it and left the [release-20](https://github.com/Unity-Technologies/ml-agents/tree/release_20) branch. Be aware of version changes mentioned in the [installation and version instructions](https://github.com/georghauschild/Human-Motion-AI/blob/main/README.md#installation-and-version-instructions) and exchange required libraries. 
  ```
  Version information: 
   ml-agents: 0.30.0,  
@@ -165,7 +165,7 @@ As the brand-new push in the [developer branch](https://github.com/Unity-Technol
 ## Developer Branch AI model
 The same training arguments as in the [training attempt 3](https://github.com/georghauschild/AIreadmeTest#attempt-3---more-simultaneous-instances-and-hidden-units-changes) are being used as they have shown to provide a good improvement in performance:  
 `mlagents-learn config/ppo/Walker.yaml --env=C:\Users\username\Desktop\Walker\exe\UnityEnvironment --num-envs=6 --run-id=MyOwnIdentifier --no-graphics`  
-The [modified training file](https://github.com/georghauschild/AIreadmeTest/blob/main/README.md#modification-1---reduced-hidden-units) is also being taken over from [training attempt 3](https://github.com/georghauschild/AIreadmeTest#attempt-3---more-simultaneous-instances-and-hidden-units-changes) as it has had a positive impact on the AI's ability to better understand its environment and make smarter decisions through the halving of the hidden units. 
+The [modified training file](https://github.com/georghauschild/Human-Motion-AI/blob/main/README.md#modification-1---reduced-hidden-units) is also being taken over from [training attempt 3](https://github.com/georghauschild/Human-Motion-AI#attempt-3---more-simultaneous-instances-and-hidden-units-changes) as it has had a positive impact on the AI's ability to better understand its environment and make smarter decisions through the halving of the hidden units. 
 
 **Cumulative reward** - After even 75 million steps the cumulative reward exhibits a consistently increasing trend over the entire duration of training. There seems to be untapped potential yet to be fully developed.    
 ![lol](https://user-images.githubusercontent.com/37111215/236912790-41620670-0348-436d-8485-c01f13aeb0c3.svg)
@@ -209,7 +209,7 @@ gail:
     strength: 0.01
     demo_path: ./Project/Assets/ML-Agents/Examples/Walker/Demos/ExpertWalker.demo
 ```
-During the training process, it was already observed that the computation of the AI model was running very slowly. After 3 hours of training only ~15,000,000 steps were simulated. The previous [developer branch AI model](https://github.com/georghauschild/AIreadmeTest#developer-branch-ai-model) was able to double the number of simulation runs in the same amount of time. If the additional computations by  imitation learning do not make up for the time loss, this attempt will fail.
+During the training process, it was already observed that the computation of the AI model was running very slowly. After 3 hours of training only ~15,000,000 steps were simulated. The previous [developer branch AI model](https://github.com/georghauschild/Human-Motion-AI#developer-branch-ai-model) was able to double the number of simulation runs in the same amount of time. If the additional computations by  imitation learning do not make up for the time loss, this attempt will fail.
 
 **GAIL-loss** - The graph depicts the trajectory of the GAIL loss during the training of a reinforcement learning algorithm. A lower GAIL loss means a better performance of the generator network.  
 ![Losses_GAIL Loss](https://user-images.githubusercontent.com/37111215/236966687-4fa01c3b-7706-4cfa-82a7-a63c97453ccf.svg)
@@ -231,7 +231,7 @@ behavioral_cloning:
 ```  
 
 The following code shows the standard process, to start the training simulation with 6 instances and no graphical displays, via command. 
-This routine was initially developed in the [Customized Training Routines](https://github.com/georghauschild/AIreadmeTest#customized-training-routines) and has remained unchanged since the [AI model of the developer branch](https://github.com/georghauschild/AIreadmeTest#developer-branch-ai-model) was created.  
+This routine was initially developed in the [Customized Training Routines](https://github.com/georghauschild/Human-Motion-AI#customized-training-routines) and has remained unchanged since the [AI model of the developer branch](https://github.com/georghauschild/Human-Motion-AI#developer-branch-ai-model) was created.  
 ```
 (sample-env) PS C:\Users\username\Documents\GitHub\ml-agents> mlagents-learn config/ppo/Walker.yaml --env=C:\Users\username\Desktop\Walker\exe\UnityEnvironment --
 num-envs=6 --run-id=JustPPOandBC --no-graphics
