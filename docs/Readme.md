@@ -52,7 +52,9 @@ Human-Motion-AI aims to simulate human movement behavior, using artificial intel
 - [ ] Additional Human Movements
 - [ ] Implementation of [Marathon](https://github.com/Unity-Technologies/marathon-envs)
 
-The project is work in progress. Unprocessed optimization methods may be subject of change. 
+The project is work in progress. Unprocessed optimization methods may be subject of change.  
+- [x] indicates that the improvement method has already been evaluated and potentially implemented
+- [ ] indicates that the processing is still pending 
 
 ## Training
 In order to generate a custom AI model, it is advisable to first optimize the training process and tailor it to the available hardware.
