@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 public class WalkerAgent : Agent
 {
     [Header("Walk Speed")]
-    [Range(0.1f, 10)]
+    [Range(0.1f, 3)]
     [SerializeField]
     //The walking speed to try and achieve
     private float m_TargetWalkingSpeed = 3;
@@ -21,7 +21,7 @@ public class WalkerAgent : Agent
         set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
     }
 
-    const float m_maxWalkingSpeed = 10; //The max walking speed
+    const float m_maxWalkingSpeed = 3; //The max walking speed
 
     //Should the agent sample a new goal velocity each episode?
     //If true, walkSpeed will be randomly set between zero and m_maxWalkingSpeed in OnEpisodeBegin()
