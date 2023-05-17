@@ -279,10 +279,10 @@ These changes were made in the file DecisionRequester.cs.
 
 ### Demonstration File
 The effectiveness of BC depends on the quality of the demonstration file. The sample demonstration file has the following values:  
-![del1](https://github.com/georghauschild/AIreadmeTest/assets/37111215/fa56a516-16b4-4110-873e-41e26f80bc89)
+![del1](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237472375-fa56a516-16b4-4110-873e-41e26f80bc89.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T081145Z&X-Amz-Expires=300&X-Amz-Signature=4b18ffb7efac82a9165e3137a17e7b460760362fc286a4942587b24885630cb2&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
 
 Recording a new demo file resulted in following values:  
-![del2](https://github.com/georghauschild/AIreadmeTest/assets/37111215/5d39cffe-2eec-4db8-9163-8f8af0523c07)
+![del2](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237472766-5d39cffe-2eec-4db8-9163-8f8af0523c07.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T081215Z&X-Amz-Expires=300&X-Amz-Signature=70172c7237096dc165d0b059454a84613187f76c686336db48fffa04d0cd8c55&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
 
 ### Generate AI Model
 To use the modified scripts for training, it is necessary to rebuild the Unity application, especially when using [concurrent Unity instances](https://github.com/georghauschild/AIreadmeTest#attempt-2---concurrent-unity-instances).  
@@ -298,14 +298,15 @@ This is approximately twice the time consumption compared the last run, which al
 Apparently, contrary to expectations, the script modifications did not lead to an acceleration, but rather to a doubling of the training time.
 
 **Cumulative-reward** - The reward graph depicts a steady and above-average increase until the end of the training.  
-![Environment_Cumulative Reward (2)](https://github.com/georghauschild/AIreadmeTest/assets/37111215/3cdb638f-d576-49c1-adee-c41810821751)
+![Environment_Cumulative Reward (2)](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237466509-3cdb638f-d576-49c1-adee-c41810821751.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T081729Z&X-Amz-Expires=300&X-Amz-Signature=b1b1b9a0121310af6e267013b9153d04840d6a3f9b3347772ea57ba65ab3f6b5&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
 
 **Value-loss** - The graph is highly pronounced, showing a sharp increase during learning and a steep drop after the reward stabilizes.
-![Losses_Value Loss (2)](https://github.com/georghauschild/AIreadmeTest/assets/37111215/9cfa7712-4d4d-4275-ae8b-b5a6b8ef1245)
+![Losses_Value Loss (2)](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237467182-9cfa7712-4d4d-4275-ae8b-b5a6b8ef1245.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T081746Z&X-Amz-Expires=300&X-Amz-Signature=adbd6cace0faf224bddbaaad8ec2555db8333e353e044ce70e03ab2f84a2caed&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
 
 
 The exceptionally long training has produced satisfactory data training results. The practical experiment, however, did not live up to expectations. The body posture and frequent falling are unsatisfactory. On the other hand, the leg work seems to be well-developed and stands out positively. The overall performance appears somewhat jittery.  
-![Unbenanntes Video – Mit Clipchamp erstellt (5)](https://github.com/georghauschild/AIreadmeTest/assets/37111215/45bc157c-c424-464c-a6e0-5dc6938a4989)
+![anim2](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/61e383b2-fbda-4775-9410-a3a06401ba08)
+
 
 The full training can be reviewed in this [TensorBoard](https://tensorboard.dev/experiment/sDUEKnKMQf66Q6mUW0m9hw/#scalars).  
 This AI model can be downloaded [here](https://drive.google.com/file/d/1XRRGducTOTjckDv7NT8p6kmU7oRVnK8_/view?usp=sharing).
