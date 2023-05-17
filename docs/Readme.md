@@ -279,10 +279,10 @@ These changes were made in the file DecisionRequester.cs.
 
 ### Demonstration File
 The effectiveness of BC depends on the quality of the demonstration file. The sample demonstration file has the following values:  
-![del1](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237472375-fa56a516-16b4-4110-873e-41e26f80bc89.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T081145Z&X-Amz-Expires=300&X-Amz-Signature=4b18ffb7efac82a9165e3137a17e7b460760362fc286a4942587b24885630cb2&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
+![g1](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/8c9ca216-eb0b-4f75-aed9-ba8cb4e858d7)
 
 Recording a new demo file resulted in following values:  
-![del2](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237472766-5d39cffe-2eec-4db8-9163-8f8af0523c07.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T081215Z&X-Amz-Expires=300&X-Amz-Signature=70172c7237096dc165d0b059454a84613187f76c686336db48fffa04d0cd8c55&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
+![g2](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/ce07ecbb-b50b-4660-b55a-35a15c9c1046)
 
 ### Generate AI Model
 To use the modified scripts for training, it is necessary to rebuild the Unity application, especially when using [concurrent Unity instances](https://github.com/georghauschild/AIreadmeTest#attempt-2---concurrent-unity-instances).  
