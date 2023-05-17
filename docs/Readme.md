@@ -165,9 +165,9 @@ As the brand-new push in the [developer branch](https://github.com/Unity-Technol
   PyTorch: 1.8.0+cpu
 ```
 ## Developer Branch AI model
-The same training arguments as in the [training attempt 3](https://github.com/georghauschild/AIreadmeTest#attempt-3---more-simultaneous-instances-and-hidden-units-changes) are being used as they have shown to provide a good improvement in performance:  
+The same training arguments as in the [training attempt 3](https://github.com/georghauschild/Human-Motion-AI#attempt-3---more-simultaneous-instances-and-hidden-units-changes) are being used as they have shown to provide a good improvement in performance:  
 `mlagents-learn config/ppo/Walker.yaml --env=C:\Users\username\Desktop\Walker\exe\UnityEnvironment --num-envs=6 --run-id=MyOwnIdentifier --no-graphics`  
-The [modified training file](https://github.com/georghauschild/Human-Motion-AI/blob/main/README.md#modification-1---reduced-hidden-units) is also being taken over from [training attempt 3](https://github.com/georghauschild/Human-Motion-AI#attempt-3---more-simultaneous-instances-and-hidden-units-changes) as it has had a positive impact on the AI's ability to better understand its environment and make smarter decisions through the halving of the hidden units. 
+The [modified training file](https://github.com/georghauschild/Human-Motion-AI#attempt-3---more-simultaneous-instances-and-hidden-units-changes) is also being taken over from [training attempt 3](https://github.com/georghauschild/Human-Motion-AI#attempt-3---more-simultaneous-instances-and-hidden-units-changes) as it has had a positive impact on the AI's ability to better understand its environment and make smarter decisions through the halving of the hidden units. 
 
 **Cumulative reward** - After even 75 million steps the cumulative reward exhibits a consistently increasing trend over the entire duration of training. There seems to be untapped potential yet to be fully developed.    
 ![lol](https://user-images.githubusercontent.com/37111215/236912790-41620670-0348-436d-8485-c01f13aeb0c3.svg)
