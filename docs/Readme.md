@@ -17,14 +17,14 @@ Human-Motion-AI aims to simulate human movement behavior, using artificial intel
 - [Imitation Learning](https://github.com/georghauschild/Human-Motion-AI#imitation-learning)
     - [Gail and BC](https://github.com/georghauschild/Human-Motion-AI#gail-and-bc)
     - [BC](https://github.com/georghauschild/Human-Motion-AI#bc)
-- [Scripts](https://github.com/georghauschild/Human-Motion-AI/tree/main#scripts)
+- [Scripts](https://github.com/georghauschild/Human-Motion-AI#scripts)
   - [Walker Agent](https://github.com/georghauschild/Human-Motion-AI#walker-agent)
   - [Decision Requester](https://github.com/georghauschild/Human-Motion-AI#decision-requester)
   - [Demonstration File](https://github.com/georghauschild/Human-Motion-AI#demonstration-file)
   - [Generate AI Model](https://github.com/georghauschild/Human-Motion-AI#generate-ai-model)
 - [Installation and Version Instructions](https://github.com/georghauschild/Human-Motion-AI#installation-and-version-instructions)
-  - [Installation Advice](https://github.com/georghauschild/Human-Motion-AI#hardware-utilization)
-  - [Library Versions](https://github.com/georghauschild/Human-Motion-AI/tree/main#library-versions)
+  - [Installation Advice](https://github.com/georghauschild/Human-Motion-AI#installation-advice)
+  - [Library Versions](https://github.com/georghauschild/Human-Motion-AI#library-versions)
 
 <!---
 ## Chronological Order
