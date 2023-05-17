@@ -241,13 +241,14 @@ num-envs=6 --run-id=JustPPOandBC --no-graphics
 
 After 7h 42m 46s the 75M simulation cycles were done. The data looks promising.  
 **Cumulative-reward** - Without GAIL, the rewards were stable and consistently achieved.  
-![Environment_Cumulative Reward (1)](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237121625-c570b5d7-c14b-46a6-bc1a-17546ed2d6ca.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T080405Z&X-Amz-Expires=300&X-Amz-Signature=c433c4c2fce8d2e091a5d4b80365ad5c6c4a67aecd1dd0412441912e19d6b358&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
+![a1](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/6726a8a5-f196-4fd3-827b-4b895bfdb596)
 
 **Value-loss** - The diagram is also in a good and expected state. [As it should be](https://unity-technologies.github.io/ml-agents/Using-Tensorboard/), it increases while the agent is learning, and then decreases once the reward stabilizes.  
-![Losses_Value Loss (1)](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237123793-2329a882-c978-49a3-8803-fc668ebb54da.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T080620Z&X-Amz-Expires=300&X-Amz-Signature=c224b36d446e13df724f511a90a36e920b643423f5206a796dcb8679b6bc71b1&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
+![a2](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/a892cd01-a4b5-4cd2-a741-857a145413e8)
+
  
 **Pretraining-loss** - Refering how well a model imitates human behavior, this is the only data that exclusively shows successes of behaviour cloning. It measures how close the model comes to the examples it has seen during training. A lower loss number indicates better performance of the model in mimicking the demonstrated behaviors. There is no obvious issue with the use of behaviour cloning here.  
-![Losses_Pretraining Loss](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237124850-0c5399b8-752e-4b6b-a834-c18c9bea1d2e.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T080627Z&X-Amz-Expires=300&X-Amz-Signature=9d15bfedb9ea7e3c01ecada9e64a228fae7dba3e5b8943f8daa2aa27c2a0f93c&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
+![a3](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/55085d1d-2539-4203-bfc3-3c76398b934d)
 
 The positive results are also reflected in the practical test. The simulation is currently the best and the most realistic.  
 ![anim1](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/5a3285b8-ece5-4575-b38d-06c6eb547bbe)
@@ -297,16 +298,14 @@ For the 75M runs that have been set up so far, this run took a total of 15 hours
 This is approximately twice the time consumption compared the last run, which also had only BC as addtional algorithm. 
 Apparently, contrary to expectations, the script modifications did not lead to an acceleration, but rather to a doubling of the training time.
 
-**Cumulative-reward** - The reward graph depicts a steady and above-average increase until the end of the training.  
-![Environment_Cumulative Reward (2)](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237466509-3cdb638f-d576-49c1-adee-c41810821751.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T081729Z&X-Amz-Expires=300&X-Amz-Signature=b1b1b9a0121310af6e267013b9153d04840d6a3f9b3347772ea57ba65ab3f6b5&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
+**Cumulative-reward** - The reward graph depicts a steady and above-average increase until the end of the training.    
+![a4](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/6d612166-b0fa-4c8c-b745-ebddfaef653f)
 
-**Value-loss** - The graph is highly pronounced, showing a sharp increase during learning and a steep drop after the reward stabilizes.
-![Losses_Value Loss (2)](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237467182-9cfa7712-4d4d-4275-ae8b-b5a6b8ef1245.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T081746Z&X-Amz-Expires=300&X-Amz-Signature=adbd6cace0faf224bddbaaad8ec2555db8333e353e044ce70e03ab2f84a2caed&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
-
+**Value-loss** - The graph is highly pronounced, showing a sharp increase during learning and a steep drop after the reward stabilizes.  
+![a5](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/d5ce7638-8625-43d1-8189-b8d0670ade73)
 
 The exceptionally long training has produced satisfactory data training results. The practical experiment, however, did not live up to expectations. The body posture and frequent falling are unsatisfactory. On the other hand, the leg work seems to be well-developed and stands out positively. The overall performance appears somewhat jittery.  
 ![anim2](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/61e383b2-fbda-4775-9410-a3a06401ba08)
-
 
 The full training can be reviewed in this [TensorBoard](https://tensorboard.dev/experiment/sDUEKnKMQf66Q6mUW0m9hw/#scalars).  
 This AI model can be downloaded [here](https://drive.google.com/file/d/1XRRGducTOTjckDv7NT8p6kmU7oRVnK8_/view?usp=sharing).
