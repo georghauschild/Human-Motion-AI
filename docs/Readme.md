@@ -350,6 +350,7 @@ Developer Branch up to [#5911](https://github.com/Unity-Technologies/ml-agents/p
 - Tensorboard 2.13.0[^13]
 - Windows 11[^14]
 - Numpy 1.21.2[^15]
+- Protobuf 3.20[^20]
 
 *It may also work for future iterations of the developer branch, but it has only been tested up to [#5911](https://github.com/Unity-Technologies/ml-agents/pull/5911).*
 
@@ -367,3 +368,4 @@ Developer Branch up to [#5911](https://github.com/Unity-Technologies/ml-agents/p
 [^17]:https://pytorch.org/get-started/previous-versions/
 [^18]:https://docs.unity3d.com/Packages/com.unity.ml-agents@2.3/manual/index.html
 [^19]:https://github.com/Unity-Technologies/ml-agents/pull/5911
+[^20]:https://github.com/protocolbuffers/protobuf/tree/3.2.x
