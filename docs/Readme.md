@@ -287,13 +287,13 @@ Recording a new demo file resulted in following values:
 
 ### Generate AI Model
 To use the modified scripts for training, it is necessary to rebuild the Unity application, especially when using [concurrent Unity instances](https://github.com/georghauschild/AIreadmeTest#attempt-2---concurrent-unity-instances).  
-The duration of behavioral cloning was increased.
+The duration of behavioral cloning was increased.  
 ``
 behavioral_cloning:
      demo_path: ./Project/Assets/ML-Agents/Examples/Walker/Demos/demo1617.demo
      strength: 0.5
      steps: 250000
-``
+``  
 For the 75M runs that have been set up so far, this run took a total of 15 hours and 40 minutes. 
 This is approximately twice the time consumption compared the last run, which also had only BC as addtional algorithm. 
 Apparently, contrary to expectations, the script modifications did not lead to an acceleration, but rather to a doubling of the training time.
