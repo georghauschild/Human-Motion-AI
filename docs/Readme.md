@@ -347,7 +347,7 @@ Developer Branch up to [#5911](https://github.com/Unity-Technologies/ml-agents/p
 - Ml-agents python package 0.30[^9]
 - pip 23.1.2[^10]
 - PyTorch 1.8.0+cpu[^17]
-- Ml-agents Unity package 2.3.0-exp.4<sup>display error? it's maybe exp.3</sup>
+- Ml-agents Unity package 2.3.0-exp.4
 - Tensorboard 2.13.0[^13]
 - Windows 11[^14]
 - Numpy 1.21.2[^15]
