@@ -156,7 +156,7 @@ Download this AI model [here](https://drive.google.com/file/d/1tOfK2Jsr-tLzane6b
 Note: This AI model will run on ML-Agents release version 20, but not on the developer branch version.
 
 ## Developer Branch Integration
-As the brand-new push in the [developer branch](https://github.com/Unity-Technologies/ml-agents/tree/develop) proved to be extremely functional, the project was shifted to it and left the [release-20](https://github.com/Unity-Technologies/ml-agents/tree/release_20) branch. Be aware of version changes mentioned in the [installation and version instructions](https://github.com/georghauschild/Human-Motion-AI/blob/main/README.md#installation-and-version-instructions) and exchange required libraries. 
+As the brand-new push in the [developer branch](https://github.com/Unity-Technologies/ml-agents/tree/develop) proved to be extremely functional, the project was shifted to it and left the [release-20](https://github.com/Unity-Technologies/ml-agents/tree/release_20) branch. Be aware of version changes mentioned in the [library versions](https://github.com/georghauschild/Human-Motion-AI#library-versions) and exchange required libraries. 
  ```
  Version information: 
   ml-agents: 0.30.0,  
