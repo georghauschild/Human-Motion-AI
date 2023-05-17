@@ -241,7 +241,7 @@ num-envs=6 --run-id=JustPPOandBC --no-graphics
 
 After 7h 42m 46s the 75M simulation cycles were done. The data looks promising.  
 **Cumulative-reward** - Without GAIL, the rewards were stable and consistently achieved.  
-![Environment_Cumulative Reward (1)](https://github.com/georghauschild/AIreadmeTest/assets/37111215/c570b5d7-c14b-46a6-bc1a-17546ed2d6ca)
+![Environment_Cumulative Reward (1)](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237121625-c570b5d7-c14b-46a6-bc1a-17546ed2d6ca.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T080405Z&X-Amz-Expires=300&X-Amz-Signature=c433c4c2fce8d2e091a5d4b80365ad5c6c4a67aecd1dd0412441912e19d6b358&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
 
 **Value-loss** - The diagram is also in a good and expected state. [As it should be](https://unity-technologies.github.io/ml-agents/Using-Tensorboard/), it increases while the agent is learning, and then decreases once the reward stabilizes.  
 ![Losses_Value Loss (1)](https://github.com/georghauschild/AIreadmeTest/assets/37111215/2329a882-c978-49a3-8803-fc668ebb54da)
