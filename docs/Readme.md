@@ -250,7 +250,7 @@ After 7h 42m 46s the 75M simulation cycles were done. The data looks promising.
 ![Losses_Pretraining Loss](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237124850-0c5399b8-752e-4b6b-a834-c18c9bea1d2e.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T080627Z&X-Amz-Expires=300&X-Amz-Signature=9d15bfedb9ea7e3c01ecada9e64a228fae7dba3e5b8943f8daa2aa27c2a0f93c&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
 
 The positive results are also reflected in the practical test. The simulation is currently the best and the most realistic.  
-![Unbenanntes Video – Mit Clipchamp erstellt (3)](https://github-production-user-asset-6210df.s3.amazonaws.com/37111215/237112788-9a209ca7-15bb-418b-93f4-350c35acef79.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230517T080633Z&X-Amz-Expires=300&X-Amz-Signature=0fb55fada7ca11b4f60620e6f96d6e654762500a69096258d16cba53a23ce431&X-Amz-SignedHeaders=host&actor_id=37111215&key_id=0&repo_id=636452369)
+![anim1](https://github.com/georghauschild/Human-Motion-AI/assets/37111215/5a3285b8-ece5-4575-b38d-06c6eb547bbe)
 
 The full training for the AI model with only behavioral cloning as imitation learning algorithm can be reviewed in this [TensorBoard](https://tensorboard.dev/experiment/0vJ1A87fQEmRfj3ySpMPYQ/#scalars).  
 This AI model can be downloaded [here](https://drive.google.com/file/d/10Ye0oOdzVB7BsZR7QIxBxsgrkaWHXcTf/view?usp=sharing).
