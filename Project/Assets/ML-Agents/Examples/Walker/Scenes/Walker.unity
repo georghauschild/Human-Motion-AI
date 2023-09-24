@@ -268,7 +268,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137784804}
-  m_ConnectedBody: {fileID: 1323032912}
+  m_ConnectedBody: {fileID: 940966084}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: -0.1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -467,7 +467,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137784808}
-  m_ConnectedBody: {fileID: 1323032915}
+  m_ConnectedBody: {fileID: 290565420}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: -0.15, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -771,7 +771,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137784810}
-  m_ConnectedBody: {fileID: 552149345}
+  m_ConnectedBody: {fileID: 2137784817}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.16, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
@@ -914,7 +914,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137784809}
-  m_ConnectedBody: {fileID: 1323032916}
+  m_ConnectedBody: {fileID: 278980099}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.05, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
@@ -1057,7 +1057,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137784806}
-  m_ConnectedBody: {fileID: 1323032914}
+  m_ConnectedBody: {fileID: 2137784814}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.05, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
@@ -1200,7 +1200,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569280389}
-  m_ConnectedBody: {fileID: 1323032909}
+  m_ConnectedBody: {fileID: 797075946}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
@@ -1645,12 +1645,6 @@ Transform:
   m_Father: {fileID: 676207071}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &552149345 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283674258174704, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &579492083
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -2065,7 +2059,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569280390}
-  m_ConnectedBody: {fileID: 2077916735}
+  m_ConnectedBody: {fileID: 184743956}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
@@ -2368,7 +2362,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569280391}
-  m_ConnectedBody: {fileID: 1323032910}
+  m_ConnectedBody: {fileID: 1569280399}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -2732,7 +2726,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940966081}
-  m_ConnectedBody: {fileID: 552149345}
+  m_ConnectedBody: {fileID: 2137784817}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: -0.1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -3218,7 +3212,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095915235}
-  m_ConnectedBody: {fileID: 2077916735}
+  m_ConnectedBody: {fileID: 184743956}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -3631,7 +3625,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137784805}
-  m_ConnectedBody: {fileID: 1323032913}
+  m_ConnectedBody: {fileID: 317937260}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: -0.15, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -3851,6 +3845,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalkerRagdoll modified
       objectReference: {fileID: 0}
+    - target: {fileID: 4409675767907316506, guid: dd62a2a5a838943fba3d2cbb377a75b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5498727688956813661, guid: dd62a2a5a838943fba3d2cbb377a75b3,
         type: 3}
       propertyPath: targetToLookAt
@@ -3888,60 +3887,6 @@ PrefabInstance:
     - {fileID: 3599283674258174711, guid: dd62a2a5a838943fba3d2cbb377a75b3, type: 3}
     - {fileID: 3599283674701520976, guid: dd62a2a5a838943fba3d2cbb377a75b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd62a2a5a838943fba3d2cbb377a75b3, type: 3}
---- !u!54 &1323032908 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283676062257938, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1323032909 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283674929991245, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1323032910 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283675242808021, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1323032911 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283675594846475, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1323032912 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283674701520978, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1323032913 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283674109553356, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1323032914 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283675061353172, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1323032915 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283675641068691, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1323032916 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283675835168092, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1330056338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4033,7 +3978,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333854697}
-  m_ConnectedBody: {fileID: 2077916735}
+  m_ConnectedBody: {fileID: 184743956}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
@@ -4615,7 +4560,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569280388}
-  m_ConnectedBody: {fileID: 1323032908}
+  m_ConnectedBody: {fileID: 359507283}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -4758,7 +4703,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569280392}
-  m_ConnectedBody: {fileID: 1323032911}
+  m_ConnectedBody: {fileID: 1333854700}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 90, y: 0, z: -400}
@@ -5197,12 +5142,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84359146bf7af47e58c229d877e801d7, type: 3}
---- !u!54 &2077916735 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3599283674879403201, guid: dd62a2a5a838943fba3d2cbb377a75b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323032907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2080237570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5491,7 +5430,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137784807}
-  m_ConnectedBody: {fileID: 552149345}
+  m_ConnectedBody: {fileID: 2137784817}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.16, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
