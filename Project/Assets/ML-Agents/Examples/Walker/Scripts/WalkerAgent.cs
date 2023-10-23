@@ -204,6 +204,24 @@ public class WalkerAgent : Agent
     //Update OrientationCube and DirectionIndicator
     void UpdateOrientationObjects()
     {
+        if (m_OrientationCube == null)
+        {
+            Debug.LogError("m_OrientationCube is not initialized!");
+            return;
+        }
+
+        if (target == null)
+        {
+            Debug.LogError("Target is not initialized!");
+            return;
+        }
+
+        if (hips == null)
+        {
+            Debug.LogError("Hips is not initialized!");
+            return;
+        }
+
         m_WorldDirToWalk = target.position - hips.position;
         m_OrientationCube.UpdateOrientation(hips, target);
         if (m_DirectionIndicator)
@@ -211,6 +229,7 @@ public class WalkerAgent : Agent
             m_DirectionIndicator.MatchOrientation(m_OrientationCube.transform);
         }
     }
+
 
     void FixedUpdate()
     {
