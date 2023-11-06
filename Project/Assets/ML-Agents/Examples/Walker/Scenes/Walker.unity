@@ -13261,8 +13261,13 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 1e891a503e223c54c9c18031bb811e8f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 1e891a503e223c54c9c18031bb811e8f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cef44195100272545bf0a4f83eac4489, type: 2}
     - target: {fileID: 5982461011174173034, guid: 1e891a503e223c54c9c18031bb811e8f,
         type: 3}
       propertyPath: m_TagString
@@ -13585,7 +13590,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327756297}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccb0f85f0009540d7ad997952e2aed7b, type: 3}
   m_Name: 
