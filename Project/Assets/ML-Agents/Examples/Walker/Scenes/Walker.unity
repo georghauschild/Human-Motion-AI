@@ -3365,6 +3365,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugCommandLineOverride: 
+--- !u!4 &1381054787 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5567173059904798952, guid: 6015605293b9672468d39736d6850f3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 844193482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1392866527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3442,14 +3448,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392866527}
-  m_LocalRotation: {x: 0.33791122, y: -0.55258113, z: 0.2608048, w: 0.7158568}
-  m_LocalPosition: {x: 12.068, y: 11.802, z: -3.49}
+  m_LocalRotation: {x: 0.2781373, y: -0.5720876, z: 0.2146645, w: 0.74113065}
+  m_LocalPosition: {x: 4.57, y: 3.38, z: -1.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50.536, y: -75.332, z: -0.004}
+  m_LocalEulerAnglesHint: {x: 41.139, y: -75.331, z: -0.004}
 --- !u!114 &1392866533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3462,7 +3468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec40c70d5160b47cd8deaab79e24892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 327756269}
+  target: {fileID: 1381054787}
   smoothingTime: 0.1
 --- !u!135 &1445795463
 SphereCollider:
@@ -3843,6 +3849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPC: {fileID: 1555498034}
+  rotationSpeed: 100
 --- !u!1 &1627106478
 GameObject:
   m_ObjectHideFlags: 0

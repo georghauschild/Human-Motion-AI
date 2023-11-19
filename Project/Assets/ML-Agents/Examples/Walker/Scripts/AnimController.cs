@@ -6,20 +6,34 @@ public class AnimController : MonoBehaviour
 {
 
     public GameObject NPC;
+    public float rotationSpeed = 100.0f; // Drehgeschwindigkeit, anpassbar im Inspector
+    private Animator animator;
 
+    void Start()
+    {
+        animator = NPC.GetComponent<Animator>();
+    }
     void Update()
     {
-        if(Input.GetButtonDown("1 Key"))
+        if(Input.GetButtonDown("w"))
         {
-            NPC.GetComponent<Animator>().Play("walk");
+            animator.SetBool("isStarting", true);
+            
         }
-        if (Input.GetButtonDown("2 Key"))
+        if (Input.GetButton("a"))
         {
-            NPC.GetComponent<Animator>().Play("left");
+            // Sanfte Drehung nach links
+            NPC.transform.Rotate(0, -rotationSpeed * Time.deltaTime, 0);
         }
-        if (Input.GetButtonDown("3 Key"))
+        if (Input.GetButton("d"))
         {
-            NPC.GetComponent<Animator>().Play("right");
+            // Sanfte Drehung nach rechts
+            NPC.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+        }
+        if (Input.GetButtonDown("s"))
+        {
+            animator.SetBool("isStarting", false);
+            animator.SetBool("isStopping", true);
         }
     }
 }
