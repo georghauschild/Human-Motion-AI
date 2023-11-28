@@ -35,5 +35,9 @@ public class AnimController : MonoBehaviour
             animator.SetBool("isStarting", false);
             animator.SetBool("isStopping", true);
         }
+        if (Input.GetButtonDown("x"))
+        {
+            animator.SetBool("isTurning", true);
+        }
     }
 }
