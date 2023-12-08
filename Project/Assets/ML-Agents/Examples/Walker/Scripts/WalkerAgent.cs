@@ -50,6 +50,10 @@ public class WalkerAgent : Agent
     public Transform forearmR;
     public Transform handR;
 
+    public GameObject NPC;
+    public float rotationSpeed = 100.0f; // Drehgeschwindigkeit, anpassbar im Inspector
+    private Animator animator;
+
     //This will be used as a stabilized model space reference point for observations
     //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
     OrientationCubeController m_OrientationCube;
@@ -84,6 +88,10 @@ public class WalkerAgent : Agent
         m_JdController.SetupBodyPart(handR);
 
         m_ResetParams = Academy.Instance.EnvironmentParameters;
+
+        // Initialisierung des NPCs und seines Animators
+        animator = NPC.GetComponent<Animator>();
+
     }
 
     /// <summary>
@@ -199,6 +207,49 @@ public class WalkerAgent : Agent
         bpDict[forearmL].SetJointStrength(continuousActions[++i]);
         bpDict[armR].SetJointStrength(continuousActions[++i]);
         bpDict[forearmR].SetJointStrength(continuousActions[++i]);
+
+        // Diskrete Aktionen interpretieren
+        var discreteActions = actionBuffers.DiscreteActions;
+        int moveAction = discreteActions[0];
+        int rotateAction = discreteActions[1];
+
+        // Bewegungsaktionen
+        switch (moveAction)
+        {
+            case 1:
+                // Vorwärts bewegen
+                animator.SetBool("isStarting", true);
+                animator.SetBool("isStopping", false);
+                break;
+            case 2:
+                // Rückwärts bewegen
+                animator.SetBool("isStarting", false);
+                animator.SetBool("isStopping", true);
+                break;
+            default:
+                // Keine Bewegung
+                animator.SetBool("isStarting", false);
+                animator.SetBool("isStopping", false);
+                break;
+        }
+
+        // Drehungsaktionen
+        switch (rotateAction)
+        {
+            case 1:
+                // Links drehen
+                NPC.transform.Rotate(0, -rotationSpeed * Time.deltaTime, 0);
+                break;
+            case 2:
+                // Rechts drehen
+                NPC.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+                break;
+            default:
+                // Keine Drehung
+                // Nichts tun, da keine Drehung erforderlich ist
+                break;
+        }
+
     }
 
     //Update OrientationCube and DirectionIndicator
@@ -310,4 +361,38 @@ public class WalkerAgent : Agent
     {
         AddReward(1f);
     }
+
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var discreteActionsOut = actionsOut.DiscreteActions;
+
+        // Bewegung: Keine Bewegung = 0, Vorwärts (W) = 1, Rückwärts (S) = 2
+        if (Input.GetKey(KeyCode.W))
+        {
+            discreteActionsOut[0] = 1;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            discreteActionsOut[0] = 2;
+        }
+        else
+        {
+            discreteActionsOut[0] = 0;
+        }
+
+        // Drehung: Keine Drehung = 0, Links drehen (A) = 1, Rechts drehen (D) = 2
+        if (Input.GetKey(KeyCode.A))
+        {
+            discreteActionsOut[1] = 1;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            discreteActionsOut[1] = 2;
+        }
+        else
+        {
+            discreteActionsOut[1] = 0;
+        }
+    }
+
 }
