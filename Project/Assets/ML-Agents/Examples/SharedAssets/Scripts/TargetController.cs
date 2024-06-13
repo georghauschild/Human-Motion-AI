@@ -13,12 +13,16 @@ namespace Unity.MLAgentsExamples
     public class TargetController : MonoBehaviour
     {
 
+        public Agent agent;
+        private Vector3 agentStartingPos = new Vector3(0.09f, 0.135f, 0.174f); //desired respawn position for the agent
+
         [Header("Collider Tag To Detect")]
         public string tagToDetect = "agent"; //collider tag to detect
 
         [Header("Target Placement")]
         public float spawnRadius; //The radius in which a target can be randomly spawned.
         public bool respawnIfTouched; //Should the target respawn to a different position when touched
+        public bool respawnAgent; //Should the agent respawn to a different position when touched
 
         [Header("Target Fell Protection")]
         public bool respawnIfFallsOffPlatform = true; //If the target falls off the platform, reset the position.
@@ -87,6 +91,17 @@ namespace Unity.MLAgentsExamples
                 {
                     MoveTargetToRandomPosition();
                 }
+
+                if (respawnAgent)
+                {
+                    agent.EndEpisode();
+                    Debug.Log("Respawn");
+                    agent.transform.position = agentStartingPos;
+                    agent.transform.rotation = Quaternion.identity; // Optionally reset rotation
+               
+                    
+                }
+
             }
         }
 

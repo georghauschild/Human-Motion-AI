@@ -290,5 +290,7 @@ public class WalkerAgent : Agent
     public void TouchedTarget()
     {
         AddReward(1f);
+        Debug.Log("Target Reward 1f");
+
     }
 }
