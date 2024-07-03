@@ -21,11 +21,11 @@ behaviors:
         strength: 1.0
       gail:
         gamma: 0.99
-        strength: 0.3
+        strength: 0.1
         demo_path: D:\georg\Documents\Master2\humanmovement\ml-agents\Project\Assets\ML-Agents\Examples\Walker\Demos\animtest1306.demo
     behavioral_cloning:
       demo_path: D:\georg\Documents\Master2\humanmovement\ml-agents\Project\Assets\ML-Agents\Examples\Walker\Demos\animtest1306.demo
-      strength: 0.5
+      strength: 0.1
       steps: 50000
     keep_checkpoints: 5
     max_steps: 30000000
