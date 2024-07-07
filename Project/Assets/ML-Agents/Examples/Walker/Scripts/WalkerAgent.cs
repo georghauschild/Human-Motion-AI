@@ -13,7 +13,7 @@ public class WalkerAgent : Agent
     [Range(0.1f, 10)]
     [SerializeField]
     //The walking speed to try and achieve
-    private float m_TargetWalkingSpeed = 10;
+    private float m_TargetWalkingSpeed;
 
     public float MTargetWalkingSpeed // property
     {
@@ -22,6 +22,8 @@ public class WalkerAgent : Agent
     }
 
     const float m_maxWalkingSpeed = 10; //The max walking speed
+    private const string WALL_TAG = "wall";
+    private const string TARGET_TAG = "target";
 
     //Should the agent sample a new goal velocity each episode?
     //If true, walkSpeed will be randomly set between zero and m_maxWalkingSpeed in OnEpisodeBegin()
@@ -106,7 +108,7 @@ public class WalkerAgent : Agent
         }
 
         //Random start rotation to help generalize
-        //hips.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
+        hips.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
 
         UpdateOrientationObjects();
 
@@ -156,9 +158,33 @@ public class WalkerAgent : Agent
         foreach (var ray in rayOutput.RayOutputs)
         {
             sensor.AddObservation(ray.HitFraction);
-            sensor.AddObservation(ray.HitTaggedObject);
-        }
+            sensor.AddObservation(ray.HitTaggedObject ? 1.0f : 0.0f); // Add a binary observation for hit or no hit
 
+            if (ray.HitTaggedObject && ray.HitGameObject != null)
+            {
+                if (ray.HitGameObject.CompareTag(WALL_TAG))
+                {
+                    sensor.AddObservation(1.0f); // Wall detected
+                }
+                else if (ray.HitGameObject.CompareTag(TARGET_TAG))
+                {
+                    sensor.AddObservation(2.0f); // Target detected
+
+                    // Calculate and add reward based on distance to target
+                    float distanceToTarget = Vector3.Distance(transform.localPosition, ray.HitGameObject.transform.localPosition);
+                    float distanceReward = CalculateDistanceReward(distanceToTarget);
+                    AddReward(distanceReward);
+                }
+                else
+                {
+                    sensor.AddObservation(0.0f); // Neither wall nor target detected
+                }
+            }
+            else
+            {
+                sensor.AddObservation(0.0f); // No hit
+            }
+        }
         var cubeForward = m_OrientationCube.transform.forward;
 
         //velocity we want to match
@@ -180,10 +206,16 @@ public class WalkerAgent : Agent
         //Position of target position relative to cube
         sensor.AddObservation(m_OrientationCube.transform.InverseTransformPoint(target.transform.position));
 
+        //distance to target
+        sensor.AddObservation(transform.localPosition);
+        sensor.AddObservation(target.localPosition);
+        sensor.AddObservation(Vector3.Distance(transform.localPosition, target.localPosition));
+
         foreach (var bodyPart in m_JdController.bodyPartsList)
         {
             CollectObservationBodyPart(bodyPart, sensor);
         }
+
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -274,9 +306,15 @@ public class WalkerAgent : Agent
                 $" head.forward: {head.forward}"
             );
         }
+        //debug this reward off
+        AddReward((matchSpeedReward * lookAtTargetReward));
 
-        AddReward(matchSpeedReward * lookAtTargetReward);
+
+        // Reward for closing distance to target
+       // float distanceToTarget = Vector3.Distance(transform.localPosition, target.localPosition);
+       // AddReward(1.0f / (distanceToTarget + 1.0f)); // Reward inversely proportional to distance
     }
+
 
     //Returns the average velocity of all of the body parts
     //Using the velocity of the hips only has shown to result in more erratic movement from the limbs, so...
@@ -317,4 +355,15 @@ public class WalkerAgent : Agent
         Debug.Log("Target Reward 1f");
 
     }
+
+    public float CalculateDistanceReward(float distance)
+    {
+        return 1.0f / (distance + 1.0f); // Reward inversely proportional to distance
+    }
+
+
+
+
+
+
 }

@@ -18,7 +18,7 @@ namespace Unity.MLAgentsExamples
         public bool penalizeGroundContact; // Whether to penalize on contact.
         bool penalizeWallContact = true; // Whether to penalize on contact.
         public float groundContactPenalty; // Penalty amount (ex: -1).
-        float wallContactPenalty = -0.5f; // Penalty amount (ex: -1).
+        float wallContactPenalty = -1f; // Penalty amount (ex: -1).
         public bool touchingGround;
         public bool touchingWall;
         const string k_Ground = "ground"; // Tag of ground object.
