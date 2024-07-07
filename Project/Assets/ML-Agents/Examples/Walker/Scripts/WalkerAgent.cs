@@ -50,6 +50,8 @@ public class WalkerAgent : Agent
     public Transform forearmR;
     public Transform handR;
 
+    public RayPerceptionSensorComponent3D rayPerceptionSensor;
+
     //This will be used as a stabilized model space reference point for observations
     //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
     OrientationCubeController m_OrientationCube;
@@ -61,6 +63,12 @@ public class WalkerAgent : Agent
 
     public override void Initialize()
     {
+        rayPerceptionSensor = GetComponentInChildren<RayPerceptionSensorComponent3D>();
+        if (rayPerceptionSensor == null)
+        {
+            Debug.LogError("RayPerceptionSensorComponent3D is not found on the agent!");
+        }
+
         m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
         m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
 
@@ -98,7 +106,7 @@ public class WalkerAgent : Agent
         }
 
         //Random start rotation to help generalize
-        hips.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
+        //hips.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
 
         UpdateOrientationObjects();
 
@@ -114,6 +122,9 @@ public class WalkerAgent : Agent
     {
         //GROUND CHECK
         sensor.AddObservation(bp.groundContact.touchingGround); // Is this bp touching the ground
+
+        //WALL CHECK
+        sensor.AddObservation(bp.groundContact.touchingWall); // Is this bp touching the wall
 
         //Get velocities in the context of our orientation cube's space
         //Note: You can get these velocities in world space as well but it may not train as well.
@@ -135,6 +146,19 @@ public class WalkerAgent : Agent
     /// </summary>
     public override void CollectObservations(VectorSensor sensor)
     {
+        if (rayPerceptionSensor == null)
+        {
+            Debug.LogError("rayPerceptionSensor is not set!");
+            return;
+        }
+        var rayInput = rayPerceptionSensor.GetRayPerceptionInput();
+        var rayOutput = RayPerceptionSensor.Perceive(rayInput, false); // Set 'batched' parameter to false
+        foreach (var ray in rayOutput.RayOutputs)
+        {
+            sensor.AddObservation(ray.HitFraction);
+            sensor.AddObservation(ray.HitTaggedObject);
+        }
+
         var cubeForward = m_OrientationCube.transform.forward;
 
         //velocity we want to match

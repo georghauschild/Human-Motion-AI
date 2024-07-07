@@ -14,10 +14,16 @@ namespace Unity.MLAgentsExamples
         [HideInInspector] public Agent agent;
 
         [Header("Ground Check")] public bool agentDoneOnGroundContact; // Whether to reset agent on ground contact.
+        [Header("Wall Check")] public bool agentDoneOnWallContact; // Whether to reset agent on ground contact.
         public bool penalizeGroundContact; // Whether to penalize on contact.
+        bool penalizeWallContact = true; // Whether to penalize on contact.
         public float groundContactPenalty; // Penalty amount (ex: -1).
+        float wallContactPenalty = -0.5f; // Penalty amount (ex: -1).
         public bool touchingGround;
+        public bool touchingWall;
         const string k_Ground = "ground"; // Tag of ground object.
+        const string k_Wall = "wall"; // Tag of ground object.
+
 
         /// <summary>
         /// Check for collision with ground, and optionally penalize agent.
@@ -37,6 +43,20 @@ namespace Unity.MLAgentsExamples
                     agent.EndEpisode();
                 }
             }
+
+            if (col.transform.CompareTag(k_Wall))
+            {
+                touchingWall = true;
+                if (penalizeWallContact)
+                {
+                    agent.SetReward(wallContactPenalty);
+                }
+
+              //  if (agentDoneOnWallContact)
+              //  {
+               //     agent.EndEpisode();
+               // }
+            }
         }
 
         /// <summary>
@@ -47,6 +67,11 @@ namespace Unity.MLAgentsExamples
             if (other.transform.CompareTag(k_Ground))
             {
                 touchingGround = false;
+            }
+
+            if (other.transform.CompareTag(k_Wall))
+            {
+                touchingWall = false;
             }
         }
     }
