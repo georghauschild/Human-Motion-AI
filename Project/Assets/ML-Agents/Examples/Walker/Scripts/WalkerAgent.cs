@@ -24,6 +24,8 @@ public class WalkerAgent : Agent
     const float m_maxWalkingSpeed = 10; //The max walking speed
     private const string WALL_TAG = "wall";
     private const string TARGET_TAG = "target";
+    //private const string RAMP_TAG = "ramp";
+    //private const string STUMBLE_TAG = "stumbleObject";
 
     //Should the agent sample a new goal velocity each episode?
     //If true, walkSpeed will be randomly set between zero and m_maxWalkingSpeed in OnEpisodeBegin()
@@ -175,6 +177,14 @@ public class WalkerAgent : Agent
                     float distanceReward = CalculateDistanceReward(distanceToTarget);
                     AddReward(distanceReward);
                 }
+         //       if (ray.HitGameObject.CompareTag(RAMP_TAG))
+         //       {
+          //          sensor.AddObservation(3.0f); // Ramp detected
+          //      }
+          //      if (ray.HitGameObject.CompareTag(STUMBLE_TAG))
+           //     {
+           //         sensor.AddObservation(4.0f); // Stumble object detected
+           //     }
                 else
                 {
                     sensor.AddObservation(0.0f); // Neither wall nor target detected
