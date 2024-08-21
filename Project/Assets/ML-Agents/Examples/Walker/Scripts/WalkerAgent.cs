@@ -316,13 +316,19 @@ public class WalkerAgent : Agent
                 $" head.forward: {head.forward}"
             );
         }
-        //debug this reward off
+
         AddReward((matchSpeedReward * lookAtTargetReward));
 
+        var armMovementPenalty = CalculateArmMovementPenalty();
+        AddReward(-armMovementPenalty/20.0f);
 
         // Reward for closing distance to target
-       // float distanceToTarget = Vector3.Distance(transform.localPosition, target.localPosition);
-       // AddReward(1.0f / (distanceToTarget + 1.0f)); // Reward inversely proportional to distance
+        // float distanceToTarget = Vector3.Distance(transform.localPosition, target.localPosition);
+        // AddReward(1.0f / (distanceToTarget + 1.0f)); // Reward inversely proportional to distance
+
+        // Penalty for not keeping the back orthogonal to the ground
+        float backOrthogonalPenalty = CalculateBackOrthogonalPenalty();
+        AddReward(-backOrthogonalPenalty / 45.0f);
     }
 
 
@@ -371,7 +377,57 @@ public class WalkerAgent : Agent
         return 1.0f / (distance + 1.0f); // Reward inversely proportional to distance
     }
 
+    private float CalculateBackOrthogonalPenalty() 
+    {
+        Vector3 chestUp = chest.up;
+        float angleToGround = Vector3.Angle(chestUp, Vector3.up);
+        // Penalty is highest when the chest is not orthogonal to the ground
+        return 1.0f - Mathf.Cos(angleToGround * Mathf.Deg2Rad);
+    }
 
+
+    private float CalculateArmMovementPenalty()
+    {
+        float penalty = 0.0f;
+
+        // Penalty for excessive speed
+       // penalty += CalculateArmSpeedPenalty(armL);
+       // penalty += CalculateArmSpeedPenalty(armR);
+
+        // Penalty for arms moving above head height
+        penalty += CalculateArmHeightPenalty(handL, chest);
+        penalty += CalculateArmHeightPenalty(handR, chest);
+
+        return penalty; // Average the penalties
+    }
+
+    private float CalculateArmSpeedPenalty(Transform arm)
+    {
+        float penalty = 0.0f;
+        var rb = m_JdController.bodyPartsDict[arm].rb;
+        float speed = rb.velocity.magnitude;
+
+        // Penalize speeds that are too high
+        if (speed > 2.5f)
+        {
+            penalty += 0.5f;
+        }
+
+        return penalty;
+    }
+
+    private float CalculateArmHeightPenalty(Transform forearm, Transform chest)
+    {
+        float penalty = 0.0f;
+
+        // Penalize if the arm is above head height
+        if (forearm.position.y > chest.position.y)
+        {
+            penalty += 0.5f;
+        }
+
+        return penalty;
+    }
 
 
 
