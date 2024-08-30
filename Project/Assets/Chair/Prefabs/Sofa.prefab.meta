@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e53670b0005af734e8bcf274ca4660de
+timeCreated: 1484219544
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 80384
+  packageName: Arm Chair
+  packageVersion: 1.0
+  assetPath: Assets/Chair/Prefabs/Sofa.prefab
+  uploadId: 174436

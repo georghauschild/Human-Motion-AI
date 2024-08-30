@@ -32,6 +32,7 @@ TagManager:
   - tile
   - stumbleObject
   - ramp
+  - targetChair
   layers:
   - Default
   - TransparentFX

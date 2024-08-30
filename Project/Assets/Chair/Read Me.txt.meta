@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: df07546d5108b4248b89027c0795310d
+timeCreated: 1484218824
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 80384
+  packageName: Arm Chair
+  packageVersion: 1.0
+  assetPath: Assets/Chair/Read Me.txt
+  uploadId: 174436
