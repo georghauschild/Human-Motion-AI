@@ -320,7 +320,7 @@ public class WalkerAgent : Agent
         AddReward((matchSpeedReward * lookAtTargetReward));
 
         var armMovementPenalty = CalculateArmMovementPenalty();
-        AddReward(-armMovementPenalty/20.0f);
+        //AddReward(-armMovementPenalty/20.0f);
 
         // Reward for closing distance to target
         // float distanceToTarget = Vector3.Distance(transform.localPosition, target.localPosition);

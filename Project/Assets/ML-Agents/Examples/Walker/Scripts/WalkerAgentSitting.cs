@@ -55,6 +55,12 @@ public class WalkerAgentSitting : Agent
     public Transform handR;
 
     public RayPerceptionSensorComponent3D rayPerceptionSensor;
+    public Transform SittingButtPointOnAgent;
+    public Transform SittingButtPointOnObject;
+    public Transform SittingHeadPointOnObject;
+    public Transform StandingHeadPoint;
+
+
 
     //This will be used as a stabilized model space reference point for observations
     //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
@@ -110,7 +116,7 @@ public class WalkerAgentSitting : Agent
         }
 
         //Random start rotation to help generalize
-       // hips.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
+        // hips.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
 
         UpdateOrientationObjects();
 
@@ -234,6 +240,7 @@ public class WalkerAgentSitting : Agent
         }
     }
 
+
     void FixedUpdate()
     {
         UpdateOrientationObjects();
@@ -273,21 +280,17 @@ public class WalkerAgentSitting : Agent
             );
         }
 
+
         // Penalty for not keeping the back orthogonal to the ground
         float backOrthogonalPenalty = CalculateBackOrthogonalPenalty();
-        AddReward(-backOrthogonalPenalty);
+        AddReward(-backOrthogonalPenalty/3);
 
-        // Berechne die Distanz zwischen Spine und Target
-        float distanceToTarget = Vector3.Distance(spine.position, target.position);
+        // Check if spine, head and butt touches the target
+  
+            CheckIfSpineTouchesTarget();
+            CheckIfButtTouchesTarget();
+            CheckIfHeadTouchesTarget();
 
-        // Berechne die Belohnung basierend auf der Nähe zum Ziel
-        float reward = 1.0f / (distanceToTarget + 1.0f); // Vermeidung von Division durch Null
-
-        // Belohnung zum Agenten hinzufügen
-        AddReward(reward);
-
-        // Check if spine touches the target
-        CheckIfSpineTouchesTarget();
     }
 
 
@@ -326,7 +329,7 @@ public class WalkerAgentSitting : Agent
     /// </summary>
     public void TouchedTarget()
     {
-        AddReward(1f);
+        //AddReward(1f);
         Debug.Log("Target Reward 1f");
 
     }
@@ -344,14 +347,65 @@ public class WalkerAgentSitting : Agent
         return 1.0f - Mathf.Cos(angleToGround * Mathf.Deg2Rad);
     }
 
-    // New method to check if the spine touches the target
+    // Methode, um zu überprüfen, wie nah der Spine dem Ziel kommt
     void CheckIfSpineTouchesTarget()
     {
-        if (Vector3.Distance(spine.position, target.position) < 0.1f)
+        float distance = Vector3.Distance(spine.position, target.position);
+        float maxDistance = 1.0f;  // Maximal relevante Distanz
+
+        if (distance < maxDistance)
         {
-            AddReward(1.0f);  // Reward for touching the target with the spine
-            Debug.Log("Spine touched the target! Reward 1.0f");
+            // Je näher die Objekte sind, desto größer der Reward
+            float reward = 1.0f / (distance + 0.01f);  // Kleiner Offset, um Division durch 0 zu vermeiden
+            AddReward(reward/2);
+            Debug.Log($"Spine is close to the target! Distance: {distance}, Reward: {reward}");
         }
     }
+
+    // Methode, um zu überprüfen, wie nah der "Butt" dem Ziel kommt
+    void CheckIfButtTouchesTarget()
+    {
+        float distance = Vector3.Distance(SittingButtPointOnAgent.position, SittingButtPointOnObject.position);
+        float maxDistance = 1.0f;
+
+        if (distance < maxDistance)
+        {
+            // Berechne den Reward basierend auf der Distanz
+            float reward = 1.0f / (distance + 0.01f);
+            AddReward(reward/2);
+            Debug.Log($"Butt is close to the target! Distance: {distance}, Reward: {reward}");
+        }
+    }
+
+    // Methode, um zu überprüfen, wie nah der Kopf dem Ziel kommt
+    void CheckIfHeadTouchesTarget()
+    {
+        float distance = Vector3.Distance(head.position, SittingHeadPointOnObject.position);
+        float maxDistance = 1.0f;
+
+        if (distance < maxDistance)
+        {
+            // Berechne den Reward basierend auf der Distanz
+            float reward = 1.0f / (distance + 0.01f);
+            AddReward(reward);
+            Debug.Log($"Head is close to the target! Distance: {distance}, Reward: {reward}");
+        }
+    }
+
+    // Methode für das Aufstehen (StandUp)
+    void StandUp()
+    {
+        float distance = Vector3.Distance(head.position, StandingHeadPoint.position);
+        float maxDistance = 1.0f;
+
+        if (distance < maxDistance)
+        {
+            // Belohnung für das Aufstehen (je näher der Kopf dem "Stehziel" kommt, desto höher der Reward)
+            float reward = 1.0f / (distance + 0.01f);
+            AddReward(reward);
+            Debug.Log($"Head is close to the standing point! Distance: {distance}, Reward: {reward}");
+        }
+    }
+
 
 }

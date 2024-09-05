@@ -243,7 +243,7 @@ public class WalkerAgentStandUp : Agent
         bool leftFootOnGround = FootGroundLeft.GetComponent<FootGroundCheck>().IsTouchingGround();
         bool rightFootOnGround = FootGroundRight.GetComponent<FootGroundCheck>().IsTouchingGround();
 
-        if (leftFootOnGround && rightFootOnGround)
+        if (leftFootOnGround || rightFootOnGround)
         {
             AddReward(0.1f); // Belohnung für das Berühren des Bodens mit beiden Füßen
         }
@@ -261,7 +261,7 @@ public class WalkerAgentStandUp : Agent
 
         // Belohne den Agenten proportional zur Höhe des Kopfes
         // Die Belohnung wird erhöht, je höher der Kopf ist
-        AddReward(headHeight * 0.1f);
+        // AddReward(headHeight * 0.1f);
     }
 
 
@@ -338,7 +338,9 @@ public class WalkerAgentStandUp : Agent
         float footLPenalty = 1.0f - Mathf.Cos(footLAngleToGround * Mathf.Deg2Rad);
 
         // Kombinieren der Bestrafungen
-        float totalPenalty = (chestPenalty + thighLPenalty + thighRPenalty + spinePenalty + footLPenalty + footRPenalty) / 6.0f;
+        float totalPenalty = (chestPenalty
+            //+ thighLPenalty + thighRPenalty + spinePenalty + footLPenalty + footRPenalty
+            ) / 1.0f;
 
         return totalPenalty;
     }
