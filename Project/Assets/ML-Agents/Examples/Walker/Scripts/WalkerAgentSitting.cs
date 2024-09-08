@@ -58,7 +58,7 @@ public class WalkerAgentSitting : Agent
     public Transform SittingButtPointOnAgent;
     public Transform SittingButtPointOnObject;
     public Transform SittingHeadPointOnObject;
-    public Transform StandingHeadPoint;
+
 
 
 
@@ -391,21 +391,5 @@ public class WalkerAgentSitting : Agent
             Debug.Log($"Head is close to the target! Distance: {distance}, Reward: {reward}");
         }
     }
-
-    // Methode für das Aufstehen (StandUp)
-    void StandUp()
-    {
-        float distance = Vector3.Distance(head.position, StandingHeadPoint.position);
-        float maxDistance = 1.0f;
-
-        if (distance < maxDistance)
-        {
-            // Belohnung für das Aufstehen (je näher der Kopf dem "Stehziel" kommt, desto höher der Reward)
-            float reward = 1.0f / (distance + 0.01f);
-            AddReward(reward);
-            Debug.Log($"Head is close to the standing point! Distance: {distance}, Reward: {reward}");
-        }
-    }
-
 
 }
