@@ -12,10 +12,10 @@ public class WalkerAgentSitting : Agent
     [Header("Walk Speed")]
     [Range(0.1f, 10)]
     [SerializeField]
-    //The walking speed to try and achieve
+ 
     private float m_TargetWalkingSpeed;
 
-    public float MTargetWalkingSpeed // property
+    public float MTargetWalkingSpeed 
     {
         get { return m_TargetWalkingSpeed; }
         set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
@@ -115,7 +115,7 @@ public class WalkerAgentSitting : Agent
             bodyPart.Reset(bodyPart);
         }
 
-        //Random start rotation to help generalize
+        //Random start rotation to help generalize -> inactive for sitting scenario
         // hips.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
 
         UpdateOrientationObjects();
@@ -347,22 +347,22 @@ public class WalkerAgentSitting : Agent
         return 1.0f - Mathf.Cos(angleToGround * Mathf.Deg2Rad);
     }
 
-    // Methode, um zu überprüfen, wie nah der Spine dem Ziel kommt
+    // check how close the spine is to the target area
     void CheckIfSpineTouchesTarget()
     {
         float distance = Vector3.Distance(spine.position, target.position);
-        float maxDistance = 1.0f;  // Maximal relevante Distanz
+        float maxDistance = 1.0f;  // max tolerated distance
 
         if (distance < maxDistance)
         {
-            // Je näher die Objekte sind, desto größer der Reward
-            float reward = 1.0f / (distance + 0.01f);  // Kleiner Offset, um Division durch 0 zu vermeiden
+            // the closer the objects are the bigger the reward
+            float reward = 1.0f / (distance + 0.01f);  // offset because zero division
             AddReward(reward/2);
             Debug.Log($"Spine is close to the target! Distance: {distance}, Reward: {reward}");
         }
     }
 
-    // Methode, um zu überprüfen, wie nah der "Butt" dem Ziel kommt
+    // check how close the butt is to the target area
     void CheckIfButtTouchesTarget()
     {
         float distance = Vector3.Distance(SittingButtPointOnAgent.position, SittingButtPointOnObject.position);
@@ -370,14 +370,14 @@ public class WalkerAgentSitting : Agent
 
         if (distance < maxDistance)
         {
-            // Berechne den Reward basierend auf der Distanz
+            // the closer the objects are the bigger the reward
             float reward = 1.0f / (distance + 0.01f);
             AddReward(reward/2);
             Debug.Log($"Butt is close to the target! Distance: {distance}, Reward: {reward}");
         }
     }
 
-    // Methode, um zu überprüfen, wie nah der Kopf dem Ziel kommt
+    // check how close the head is to the target area
     void CheckIfHeadTouchesTarget()
     {
         float distance = Vector3.Distance(head.position, SittingHeadPointOnObject.position);
@@ -385,7 +385,7 @@ public class WalkerAgentSitting : Agent
 
         if (distance < maxDistance)
         {
-            // Berechne den Reward basierend auf der Distanz
+            // the closer the objects are the bigger the reward
             float reward = 1.0f / (distance + 0.01f);
             AddReward(reward);
             Debug.Log($"Head is close to the target! Distance: {distance}, Reward: {reward}");

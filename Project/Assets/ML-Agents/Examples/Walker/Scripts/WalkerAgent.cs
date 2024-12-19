@@ -12,16 +12,16 @@ public class WalkerAgent : Agent
     [Header("Walk Speed")]
     [Range(0.1f, 10)]
     [SerializeField]
-    //The walking speed to try and achieve
+    
     private float m_TargetWalkingSpeed;
 
-    public float MTargetWalkingSpeed // property
+    public float MTargetWalkingSpeed 
     {
         get { return m_TargetWalkingSpeed; }
         set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
     }
 
-    const float m_maxWalkingSpeed = 10; //The max walking speed
+    const float m_maxWalkingSpeed = 10; //max walking speed
     private const string WALL_TAG = "wall";
     private const string TARGET_TAG = "target";
     //private const string RAMP_TAG = "ramp";
@@ -35,7 +35,7 @@ public class WalkerAgent : Agent
     //The direction an agent will walk during training.
     private Vector3 m_WorldDirToWalk = Vector3.right;
 
-    [Header("Target To Walk Towards")] public Transform target; //Target the agent will walk towards during training.
+    [Header("Target To Walk Towards")] public Transform target; //Target the agent will walk towards during training
 
     [Header("Body Parts")] public Transform hips;
     public Transform chest;
@@ -114,7 +114,7 @@ public class WalkerAgent : Agent
 
         UpdateOrientationObjects();
 
-        //Set our goal walking speed
+        //walking speed
         MTargetWalkingSpeed =
             randomizeWalkSpeedEachEpisode ? Random.Range(0.1f, m_maxWalkingSpeed) : MTargetWalkingSpeed;
     }
@@ -156,11 +156,11 @@ public class WalkerAgent : Agent
             return;
         }
         var rayInput = rayPerceptionSensor.GetRayPerceptionInput();
-        var rayOutput = RayPerceptionSensor.Perceive(rayInput, false); // Set 'batched' parameter to false
+        var rayOutput = RayPerceptionSensor.Perceive(rayInput, false); //false, because it is not necessary
         foreach (var ray in rayOutput.RayOutputs)
         {
             sensor.AddObservation(ray.HitFraction);
-            sensor.AddObservation(ray.HitTaggedObject ? 1.0f : 0.0f); // Add a binary observation for hit or no hit
+            sensor.AddObservation(ray.HitTaggedObject ? 1.0f : 0.0f); // binary observation for hit or no hit
 
             if (ray.HitTaggedObject && ray.HitGameObject != null)
             {
